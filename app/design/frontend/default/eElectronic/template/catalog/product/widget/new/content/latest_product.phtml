@@ -1,0 +1,38 @@
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+    <?php print "<pre>"; ?>
+    <?php //print_r($_products->getItems()); ?>
+    <?php print "</pre>"; ?>
+	<div class="maincontent-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-product">
+                        <h2 class="section-title"><?php echo $this->__('Latest Products') ?></h2>
+                        <div class="product-carousel">
+                        	<?php foreach ($_products->getItems() as $_product): ?>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(85) ?>" alt="">
+                                        <div class="product-hover">
+                                            <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="<?php echo $_product->getUrl(); ?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <h2><a href="<?php echo $_product->getRequestPath(); ?>"><?php echo $this->stripTags($_product->getName(), null, true) ?></a>
+                                    </h2>
+                                    
+                                    <div class="product-carousel-price">
+                                        <ins><?php echo $this->getPriceHtml($_product, true, '-widget-new-grid') ?></ins>
+                                    </div> 
+                                </div>
+                            <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End main content area -->
+<?php endif; ?>

@@ -1,0 +1,7 @@
+<?php 
+	$grandTotal = Mage::helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal());
+	$itemCount = $this->helper('checkout/cart')->getCart()->getItemsCount();
+?>
+<div class="shopping-item">
+    <a href="<?php echo $this->getUrl('checkout/cart'); ?>"><?php echo $this->__('Cart');?> - <span class="cart-amunt"><?php echo $grandTotal; ?></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"><?php echo $itemCount; ?> </span></a>
+</div>

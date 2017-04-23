@@ -1,0 +1,13 @@
+<h1>~Check out test</h1>
+<?php echo $this->getItemCount(); ?> 
+<?php //echo $this->getTotalsCache(); ?>
+<?php //echo $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); ?>
+
+<?php //echo $this->getSummaryCount(); ?>
+<?php if(!$_cartQty)
+    $_cartQty = 0;
+    $_shipping = $this->helper('checkout')->formatPrice
+    (Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getShippingAmount());
+
+?>
+<?php echo $_shipping ?>

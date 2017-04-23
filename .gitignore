@@ -1,0 +1,17 @@
+.htaccess
+app/etc/local.xml
+cron.php
+cron.sh
+downloader
+errors/
+includes
+index.php
+index.php.sample
+install.php
+LICENSE*
+media
+RELEASE_NOTES.txt
+robots.txt
+var
+php.ini.sample
+.htaccess.sample
